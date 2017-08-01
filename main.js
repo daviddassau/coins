@@ -2,14 +2,15 @@
 let enteredAmount = prompt("Enter a number:");
 //Coin counting factory
 function amtOfCoins(input){
-    // debugger;
+    //debugger;
     input = parseFloat(input) * 100;
-    input = Math.floor(input.toFixed(2)); 
-    
-    let numberOfQuarters = 0;
-    let numberOfDimes = 0;
-    let numberOfNickels = 0;
-    let numberOfPennies = 0;
+    input = Math.floor(input.toFixed(2));   
+    let coinPurse = {
+        quarters: 0,
+        dimes: 0,
+        nickels: 0,
+        pennies: 0
+  };
     let quarter = 25;
     let dime = 10;
     let nickel = 5;
@@ -17,26 +18,20 @@ function amtOfCoins(input){
     let documentString = "";
     while (input >= quarter) {
         input -= quarter;        
-        numberOfQuarters++; 
+        coinPurse.quarters++; 
     }; 
     while (input >= dime) {
         input -= dime;
-        numberOfDimes++;
+        coinPurse.dimes++;
     };
     while (input >= nickel) {
         input -= nickel;
-        numberOfNickels++;
+        coinPurse.nickels++;
     };
     while (input >= penny) {
         input -= penny;
-        numberOfPennies++;
-    };
-    let coinPurse = {
-        quarters: numberOfQuarters,
-        dimes: numberOfDimes,
-        nickles: numberOfNickels,
-        pennies: numberOfPennies
-  };
-  return documentString = "That amount comes out to " + numberOfQuarters + " quarter(s), " + numberOfDimes + " dime(s), " + numberOfNickels + " nickel(s), and " + numberOfPennies + " penny(s).";
+        coinPurse.pennies++;
+    };  
+  return documentString = "That amount comes out to " + coinPurse.quarters + " quarter(s), " + coinPurse.dimes + " dime(s), " + coinPurse.nickels + " nickel(s), and " + coinPurse.pennies + " penny(s).";
 };
 document.write(amtOfCoins(enteredAmount));
