@@ -30,4 +30,4 @@ var coins = coinCounter()
 console.log();
 ```
 ## Final Result
-![(https://media.giphy.com/media/rM4urYgR8eIZq/giphy.gif)](https://media.giphy.com/media/rM4urYgR8eIZq/giphy.gif)
+![(https://media.giphy.com/media/rM4urYgR8eIZq/source.mp4)](https://media.giphy.com/media/rM4urYgR8eIZq/source.mp4)
